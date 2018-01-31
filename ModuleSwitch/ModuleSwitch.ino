@@ -6,7 +6,7 @@
 
 BLEPeripheral blePeripheral = BLEPeripheral();  
    
-BLEService servoService(" 19B10000-E8F2-537E-4F6C-D104768A1214");
+BLEService servoService("19B10000-E8F2-537E-4F6C-D104768A1214");
 BLEFixedLengthCharacteristic reader("19B10000-E8F2-537E-4F6C-D104768A1214", BLEWrite | BLERead | BLENotify,10);
 BLEFixedLengthCharacteristic spinNum("19B10001-E8F2-537E-4F6C-D104768A1214", BLEWrite | BLERead | BLENotify,10);
 
@@ -57,6 +57,11 @@ void loop() {
     }
  
   }
+  
+  digitalWrite(BLE_LED, HIGH);
+  delay(200);
+  digitalWrite(BLE_LED, LOW);
+  delay(200);
 }
 
 
